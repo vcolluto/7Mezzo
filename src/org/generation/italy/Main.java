@@ -23,7 +23,7 @@ public class Main {
 			
 		//estrazione di una carta
 		int pos;
-		String risposta;
+		String risposta="";
 		do {
 			do {
 				pos=r.nextInt(40);		//da 0 a 39
@@ -38,10 +38,16 @@ public class Main {
 				punteggio+=0.5f;
 			
 			System.out.println("Punteggio: "+punteggio);
-			System.out.println("\nVuoi continuare (s/n)");
-			risposta=sc.nextLine();
-		} while(risposta.equals("s"));
-		
+			if (punteggio>7.5f)
+				System.out.println("Hai sballato!");
+			else if (punteggio<7.5f) {
+				System.out.println("\nVuoi continuare (s/n)");
+				risposta=sc.nextLine();	
+			}
+			
+		} while(risposta.equals("s") && punteggio<7.5);
+		System.out.println("Grazie e arrivederci!");
+		sc.close();
 	}
 
 }
