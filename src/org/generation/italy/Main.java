@@ -21,8 +21,13 @@ public class Main {
 			for (int i=1;i<=10;i++)
 				carte.add(i+" di "+semi[s]);
 			
-		
-
+		//estrazione di una carta
+		int pos;
+		do {
+			pos=r.nextInt(40);		//da 0 a 39
+		} while (estratte.contains(pos));	//se l'ho già estratta torno indietro
+		estratte.add(pos);		//non può essere più estratto
+		System.out.println("E' uscito: "+carte.get(pos));
 	}
 
 }
